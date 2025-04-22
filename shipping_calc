@@ -1,0 +1,41 @@
+JEANS_COST = 150
+T_SHIRT_COST = 50
+SHIPPING_COST = 20
+discount = 0.1
+def take_order():
+    """Take order for jeans and t-shirts."""
+    jeans = int(input("Enter the number of jeans: "))
+    t_shirt = int(input("Enter the number of t-shirts: "))
+    return jeans, t_shirt
+def order_total(jeans, t_shirt):
+    """Calculate the total order cost."""
+    jeans_cost = jeans * JEANS_COST
+    t_shirt_cost = t_shirt * T_SHIRT_COST
+    total_cost = jeans_cost + t_shirt_cost
+    return total_cost
+def calculate_shipping_cost(total_cost) :
+    """Calculate the shipping cost based on the total order cost."""
+    if total_cost > 200:
+        print("You are eligible for free shipping.")
+        return 0
+    else:
+      total_cost =  total_cost + SHIPPING_COST
+    return total_cost
+def discount_price(price, discount):
+    """Calculate the discounted price."""
+    return price - (price * discount / 100)
+def main():
+    """Main function to run the program."""
+    jeans, t_shirt = take_order()
+    total_cost = order_total(jeans, t_shirt)
+    shipping_cost = calculate_shipping_cost(total_cost)
+    print("Your total cost is:", total_cost)
+    if total_cost >= 500:
+        print("You are eligible for a discount of 10% on your order.")
+        total_cost = discount_price(total_cost, discount)
+        print("Your total cost after discount is:", total_cost)
+    print("Your shipping cost is:", shipping_cost)
+if __name__ == "__main__":
+    main()
+# This code calculates the total cost of an order for jeans and t-shirts, including shipping costs and discounts.
+

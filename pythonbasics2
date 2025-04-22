@@ -1,0 +1,10 @@
+
+color = "green"
+age = 38
+animal = "Dog"
+def favoutites():
+    print("My favourite color is " + color)
+    print("My favourite animal is " + animal)
+    print("My age is " + str(age))
+favoutites()
+

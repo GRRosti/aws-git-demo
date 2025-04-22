@@ -1,0 +1,8 @@
+# Prompt the user to enter a sentence
+sentence = input("Please enter a sentence: ")
+
+# Calculate the length of the sentence
+sentence_length = len(sentence)
+
+# Print the length of the sentence
+print("The length of your sentence is:", sentence_length)

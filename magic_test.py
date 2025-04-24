@@ -11,9 +11,6 @@ if spell_power < 40 or accuracy < 40 or control < 40:
     print ("Fail")
     exit(0)
 else:
-    # 2. Compute an average score.
-    average_score = (spell_power + accuracy + control) / 3
-    grade = ""
     # 3. Grade based on average if no automatic fail
     if average_score >= 90:
         grade = "Archmage"
@@ -22,7 +19,7 @@ else:
     elif average_score >= 60:
         grade = "Apprentice"
     else:
-        grade = "Fail"
+        grade = "Fail" 
 
 # Print the results
 print(f"Spell Power: {spell_power}")

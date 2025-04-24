@@ -1,11 +1,12 @@
 # Secret Agent Code Generator
 
 # 1. Inputs (use input() in this exact order)
-code1_input = input()
-code2_input = input()
-code3_input = input()
-numA_input_str = input()
-numB_input_str = input()
+code1_input = input("Enter first codeword: ")
+code2_input = input("Enter second codeword: ")
+code3_input = input("Enter third codeword: ")
+numA_input_str = input("Enter first number: ")
+numB_input_str = input("Enter second number: ")
+
 
 # Convert inputs to lowercase for consistency and store in final variables
 code1 = code1_input.lower()

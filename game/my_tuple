@@ -1,0 +1,57 @@
+# 1. Create a set containing 5 unique numbers.
+my_set = {1, 5, 2, 8, 4}
+print(f"Original set: {my_set}")
+
+# To create the tuple with corresponding squares, it's best to have the numbers in a defined order.
+# We'll sort the set (converted to a list) to establish this order.
+sorted_set_list = sorted(list(my_set))
+print(f"Set converted to sorted list for squaring: {sorted_set_list}")
+
+# 2. Create a tuple containing the square of each number in the sorted list from the set.
+my_tuple = tuple(x ** 2 for x in sorted_set_list)
+print(f"Tuple containing squares of sorted set elements: {my_tuple}")
+
+print("-" * 30)
+
+# 3. Perform the following tasks:
+
+# 3.1. Convert the set to a list and sort the numbers in descending order.
+set_to_list_desc = sorted(list(my_set), reverse=True)
+print(f"Set converted to list and sorted in descending order: {set_to_list_desc}")
+print("-" * 30)
+
+# 3.2. Find the intersection between the set and the tuple.
+# To find the intersection, we can convert the tuple to a set first.
+# The intersection operation works efficiently between two sets.
+tuple_as_set = set(my_tuple)
+intersection_result = my_set.intersection(tuple_as_set)
+# Alternatively, using the '&' operator: intersection_result = my_set & tuple_as_set
+
+# 3.3. Print the length of the tuple and the set.
+print(f"Length of the set: {len(my_set)}")
+print(f"Length of the tuple: {len(my_tuple)}")
+print("-" * 30)
+
+# 3.4. Try adding a new value to the tuple (what happens?).
+print("Attempting to add a value to the tuple...")
+try:
+    # Tuples are immutable, so adding an element will raise a TypeError
+    # Let's try adding 100
+    # my_tuple.append(100) # This method doesn't exist for tuples
+    # Or trying to reassign an element:
+    # my_tuple[0] = 99 # This will also raise a TypeError
+    print("Trying to create a new tuple with an added element:")
+    new_tuple_attempt = my_tuple + (100,) # This creates a *new* tuple, it doesn't modify the original
+    print(f"Creating a new tuple by concatenation: {new_tuple_attempt}")
+    print("Note: The original tuple remains unchanged because tuples are immutable.")
+    print(f"Original tuple after attempt: {my_tuple}")
+
+except TypeError as e:
+    print(f"Caught a TypeError as expected: {e}")
+    print("This happens because tuples are immutable and do not support item assignment or methods like append.")
+print("-" * 30)
+
+
+# 3.5. Print the result of the intersection between the set and the tuple
+print(f"Intersection between the set ({my_set}) and the tuple ({my_tuple}): {intersection_result}")
+print("-" * 30)

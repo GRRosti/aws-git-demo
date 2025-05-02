@@ -139,7 +139,7 @@ class QuizGame:
         else:
             self.winner_name = " and ".join(winners)
             self.winner_score = max_score
-        print(f"\nCongratulations {self.winner_name}! You are the winner with a score of {self.winner_score} out of {self.total_questions}.")
+        print(f"\nCongratulations {self.winner_name}! You are the winner with a score of {self.winner_score} out of 3.")
 
         # Call the method to determine the winner after all questions are answered.
 # --- Main part of the script ---

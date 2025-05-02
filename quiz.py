@@ -35,7 +35,7 @@ class QuizGame:
         }
         self.participants = [] # List to store participant names
         self.scores = {} # Dictionary to store scores, key is participant name, value is score
-        self.total_questions = 0 # Will be set by user input
+        self.total_questions = 0
         self.current_question_index = 0  # Track the number of questions asked
         self.current_participant_index = 0 # Track whose turn it is
         self.winner = None # Will be set at the end of the game
@@ -59,21 +59,11 @@ class QuizGame:
             name = input(f"Enter name for Participant {i + 1}: ")
             self.participants.append(name)
             self.scores[name] = 0 # Initialize score for each participant
-
+        # Calculate the total number of questions based on the number of participants.
         while True:
-            try:
-                num_questions_str = input("How many questions would you like to answer in total? ")
-                num_questions = int(num_questions_str)
-                if num_questions > 0:
-                    self.total_questions = num_questions
-                    break # Exit the loop if input is a valid positive integer
-                else:
-                    print("Please enter a positive number of questions.")
-            except ValueError:
-                print("Invalid input. Please enter a number.")
-
-        print(f"\nWelcome, {', '.join(self.participants)}! You will answer a total of {self.total_questions} questions, taking turns.")
-
+            self.total_questions = num_participants * 3
+            print(f"\nWelcome, {', '.join(self.participants)}! You will answer a total of 3 questions each, taking turns.")
+            break
     def ask_question(self):
         """Asks a question to the current participant."""
         if self.current_question_index < self.total_questions:
@@ -95,8 +85,10 @@ class QuizGame:
             # Check if the user's answer matches the correct answer (case-insensitive comparison).
             if answer.lower() == question_data['answer'].lower():
                 print("Correct!")
+                print("------"*2)
                 # Increment the score for the current participant.
                 self.scores[current_participant] += 1
+                print(f"{current_participant}'s score: {self.scores[current_participant]} out of 3" )
             else:
                 # Inform the user that the answer is wrong and provide the correct answer.
                 print(f"Wrong! The correct answer is: {question_data['answer']}")

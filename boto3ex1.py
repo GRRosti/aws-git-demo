@@ -20,11 +20,11 @@ def configure_aws_credentials():
         # Configure AWS CLI
         subprocess.run(['aws', 'configure', 'set', 'aws_access_key_id', access_key], check=True)
         subprocess.run(['aws', 'configure', 'set', 'aws_secret_access_key', secret_key], check=True)
-
+        
         if session_token:
             subprocess.run(['aws', 'configure', 'set', 'aws_session_token', session_token], check=True)
         
-            subprocess.run(['aws', 'configure', 'set', 'region', region], check=True)
+        subprocess.run(['aws', 'configure', 'set', 'region', region], check=True)
         
         print("AWS CLI credentials configured successfully!")
         return region

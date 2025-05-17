@@ -14,8 +14,8 @@ def test_division():
         else:
             list2.append(i)
 test_division()
-print("The numbers that are divisible by", dividers, "are:", list1)
-print("There are", len(list1), "numbers that are divisible by", dividers)
-print("The numbers that are not divisible by", dividers, "are:", list2)
-print("There are", len(list2), "numbers that are not divisible by", dividers)
+print("The numbers that are divisible by", dividers, "are:","\n", list1, end="\n\n")
+print("There are", len(list1), "numbers that are divisible by", dividers, end="\n\n")
+print("The numbers that are not divisible by", dividers, "are:","\n", list2, end="\n\n")
+print("There are", len(list2), "numbers that are not divisible by", dividers, end="\n\n")
 print("Thanks for playing!")

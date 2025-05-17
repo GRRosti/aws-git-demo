@@ -1,0 +1,22 @@
+#!/bin/bash
+# Update system
+sudo yum update -y
+
+# Install Python
+sudo yum install python3 -y
+
+# Install Git
+sudo yum install git -y
+
+# Create directory in /home for the repo
+mkdir -p /home/ec2-user/repo
+
+# Clone the Git repository
+git clone https://github.com/your-username/your-repo.git /home/ec2-user/repo
+
+# Set permissions
+chown -R ec2-user:ec2-user /home/ec2-user/repo
+chmod -R 755 /home/ec2-user/repo
+
+# Log completion
+echo "Setup complete: Python, Git installed, and repo cloned to /home/ec2-user/repo" >> /var/log/user-data.log

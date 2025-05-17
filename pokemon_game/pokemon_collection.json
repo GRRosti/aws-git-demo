@@ -1,0 +1,55 @@
+{
+  "pokemon": [
+    {
+      "name": "mightyena",
+      "id": 262,
+      "types": [
+        "dark"
+      ],
+      "height": 10
+    },
+    {
+      "name": "articuno",
+      "id": 144,
+      "types": [
+        "ice",
+        "flying"
+      ],
+      "height": 17
+    },
+    {
+      "name": "avalugg",
+      "id": 713,
+      "types": [
+        "ice"
+      ],
+      "height": 20
+    },
+    {
+      "name": "zubat",
+      "id": 41,
+      "types": [
+        "poison",
+        "flying"
+      ],
+      "height": 8
+    },
+    {
+      "name": "magcargo",
+      "id": 219,
+      "types": [
+        "fire",
+        "rock"
+      ],
+      "height": 8
+    },
+    {
+      "name": "cinderace",
+      "id": 815,
+      "types": [
+        "fire"
+      ],
+      "height": 14
+    }
+  ]
+}
